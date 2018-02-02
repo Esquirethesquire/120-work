@@ -2,10 +2,15 @@ Name: {Nathan Killian}
 # Weekly Responce
 ## Summary
 Basically what we did this week was download the required software for the course and familiarize ourselves with it a bit before completing this weekly responce. There were five things we learned about specifically as well. They are:
+
 -Text Documents
+
 -Text Editors
--Git Version Control
+
+Git Version Control
+
 -GitHub
+
 -markdown (`.md`)
 
 The choices i made in programs were GitHub Desktop and Atom. The reason i chose these two programs because they were suggested and i am not familar with any other programs of the same type.
