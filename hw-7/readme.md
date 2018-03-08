@@ -12,7 +12,6 @@ Nathan Killian, 50
 # what the original code is doing.
 The orginal code creates a ball that bounces back and forth between the window parameters. It is constrained by if statements and we can alter the path of the ball by using the mousePressed function.
 
-# Why is it working the way it is?
 
 # What does each line do?
   1. When you declare your variables they are creating the initial size, and location of the ball.
