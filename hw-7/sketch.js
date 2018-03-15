@@ -21,7 +21,7 @@ function setup() {
 function draw() {
 
   //**************
-  // if statement making the backround flash random colors if the mous is mousePressed
+  // if statement making the backround flash random colors if the mouse is mousePressed
   //************
   if ( mouseIsPressed ) {
          background( random(255), random(255), random(255) );
