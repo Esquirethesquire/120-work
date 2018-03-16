@@ -1,4 +1,4 @@
-# Empty p5 sketch.Nathan Killian
+Nathan Killian
 
 [Art](https://alexk2313.github.io/120-work/hw-8/);
 
