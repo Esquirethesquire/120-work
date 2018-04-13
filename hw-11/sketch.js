@@ -7,23 +7,32 @@ function setup() {
 
     // createCanvas(windowWidth, windowHeight);
     createCanvas(windowWidth, windowHeight);
-    bg_color = color('rgb(0, 0, 0)');
+    bg_color = color(98, 98, 98);
 
-    for( let i = 0; i < 30; i++) {
+    for( let i = 0; i < 20; i++) {
       let t = 10 + 50 * i
       let size = random(20, 100)
-      circle[i] = new MovingBall(width/2,height/2,50)
+      circle[i] = new MovingBall(t, height/2, size)
     }
 
     }
 
+// creating a new function to create a new object on mouse click
+//function mouseClick() {
+    //  let r = random( 20, 60);
+      //let b = new MovingBall(mouseX, mouseY, r);
+      //circle.push(b);
+
+//}
 
 
 function draw() {
     background(bg_color);
 
     for(let i = 0; i < circle.length; i++){
-      circle[i].frame();
+      circle[i].move();
+      circle[i].edge();
+      circle[i].show();
     }
 
 
@@ -47,27 +56,24 @@ class MovingBall {
       this.deltaS = random( -2, 2);
     }
 
-    frame() {
-      this.grow();
-      this.check();
-      this.move();
-      this.edge();
-      this.show();
-    }
+    //frame() {
+    //  this.grow;
+      //this.sizecheck;
+      //this.move;
+      //this.edge;
+      //this.show;
+  //  }
 
 // making my circle change size
-  grow() {
-      this.s += this.deltaS;
-    }
-
+//  grow() {
+      //this.s += this.deltaS;
+  //  }
 // making it so my circle stays within 0 and 100 pixels in size
-  check() {
-      if( this.s >= 100 || this.s <=0 ) {
-        this.deltaS *= -1;
-     }
-    }
-
-
+//  sizeCheck() {
+    //  if( this.s >= 100 || this.s <=0 ) {
+      //  this.deltaS *= -1;
+    //  }
+  //  }
 // giving my objects motion
   move() {
       this.x += this.deltaX;
