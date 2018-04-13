@@ -19,13 +19,9 @@ function setup() {
 // create my draw function
 function draw(){
 
-
-
 //add circle function into the draw function
-
-    drawCircle();
+  drawCircle();
 }
-
 
 //********
 //Create function to draw an ellipse
