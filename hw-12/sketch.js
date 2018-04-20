@@ -7,10 +7,10 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     bg_color = color('rgb(0, 0, 0)');
 
-//create two circles based off of my array
-    circle[0] = new MovingBall(200, 200);
-    circle[1] = new MovingBall(600,600);
+    for( let i = 0; i < 2; i++) {
 
+      circle[i] = new MovingBall(width/2, height/2, 50)
+    }
 
 
     }
@@ -20,18 +20,9 @@ function setup() {
 
 function draw() {
     background(bg_color);
-      circle[0].edge();
-      circle[0].move();
-      circle[0].show();
-      circle[0].grow();
-      circle[0].check();
+      circle[0].frame();
 
-
-      circle[1].edge();
-      circle[1].move();
-      circle[1].show();
-      circle[1].grow();
-      circle[1].check();
+      circle[1].frame();
 
 //if the two circles intercect then change the color
       if ( circle[0].intersects(circle[1])){
@@ -57,7 +48,7 @@ class MovingBall {
   constructor( x, y, s) {
       this.x = x;
       this.y = y;
-      this.s = random (200,300);
+      this.s = random (300,400);
       this.r = this.s / 2
       this.deltaX = random(-10,10);
       this.deltaY = random( -10, 10);
@@ -65,6 +56,14 @@ class MovingBall {
       this.col = color ('rgb(180, 38, 136)');
     }
 
+    frame() {
+      this.move();
+      this.edge();
+      this.grow();
+      this.check();
+      this.show();
+
+}
 
 //color change part of the class
   colorChange() {
@@ -113,7 +112,7 @@ class MovingBall {
        }
     //making it so my circle stays within 0 and 100 pixels in size
      check() {
-         if( this.s >= 300 || this.s <=200 ) {
+         if( this.s >= 400 || this.s <=300 ) {
          this.deltaS *= -1;
          }
        }
