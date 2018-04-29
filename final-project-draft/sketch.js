@@ -89,19 +89,20 @@ function draw() {
       fill('rgb(0, 158, 6)');
       triangle(-this.r,this.r,this.r,this.r,0,-this.r);
       }
-//creating edges for my Ship
+
+// Bounding my ship by the edges of the canvas
     edges(){
-      if(this.pos.x > width + this.r){
-      this.pos.x = -this.r;
+      if(this.pos.x > width ){
+      this.pos.x = width ;
     }
-    else if(this.pos.x < -this.r){
-      this.pos.x = width + this.r;
+    else if(this.pos.x < 0){
+      this.pos.x =  0;
     }
-    if(this.pos.y > height + this.r){
-    this.pos.y = -this.r;
+    if(this.pos.y > height ){
+    this.pos.y = height ;
   }
-  else if(this.pos.y < -this.r){
-    this.pos.y = height + this.r;
+  else if(this.pos.y < 0){
+    this.pos.y = 0;
   }
 }
 //creating part of object to modify the direction it turns
