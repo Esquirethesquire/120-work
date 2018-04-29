@@ -73,13 +73,13 @@ function draw() {
 
     keyPressed(){
       if (keyCode == RIGHT_ARROW) {
-        ship.setRotation(0.1);
+        this.setRotation(0.1);
       } else if (keyCode == LEFT_ARROW);
-      ship.setRotation(-0.1);
+      this.setRotation(-0.1);
     }
 
     keyReleased() {
-        ship.setRotation(0);
+        this.setRotation(0);
     }
 
   }
