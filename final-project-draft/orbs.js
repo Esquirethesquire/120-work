@@ -4,7 +4,7 @@ class Orb {
   constructor(x,y,s) {
     this.x = x;
     this.y = y;
-    this.r = 50
+    this.r = 100
     this.deltaX = random(-3, 3);
     this.deltaY = random(-3, 3);
     }
