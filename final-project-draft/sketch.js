@@ -9,7 +9,11 @@ function setup() {
     bg_color = color('rgb(0, 0, 0)');
 
     ship = new Ship();
+    for( let i = 0; i < 5; i++) {
+
     orbs.push(new Orb());
+    }
+
   }
 
 
@@ -24,7 +28,10 @@ function draw() {
 
     for(let i = 0; i < orbs.length; i++){
       orbs[i].show();
+      orbs[i].move();
+      orbs[i].edges();
   }
+}
 
 
 
@@ -44,6 +51,7 @@ function draw() {
       else if (keyCode == LEFT_ARROW){
         ship.setRotation(-.1);
     }
-      else if (keyCode == UP_ARROW)
+      else if (keyCode == UP_ARROW){
         ship.boosting(true);
   }
+}

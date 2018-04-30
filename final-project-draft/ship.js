@@ -34,12 +34,14 @@
 
 //creating my ship
     show(){
+      push();
       translate(this.pos.x, this.pos.y);
       rotate(this.direction + PI/2);
       stroke(255);
       strokeWeight(5);
       fill('rgb(0, 158, 6)');
       triangle(-this.r,this.r,this.r,this.r,0,-this.r);
+      pop();
       }
 
 // Bounding my ship by the edges of the canvas
