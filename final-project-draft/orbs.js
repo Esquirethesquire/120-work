@@ -1,31 +1,46 @@
 //*******
 // create orb class
 class Orb {
-    constructor(){
-      this.pos = createVector(random(width), random(height));
-      this.r = 100
-      this.vel = p5.Vector.random2D();
+  constructor(x,y,s) {
+    this.x = x;
+    this.y = y;
+    this.r = 50
+    this.deltaX = random(-3, 3);
+    this.deltaY = random(-3, 3);
     }
     show(){
       push();
-      translate(this.pos.x, this.pos.y);
+
       stroke(255);
       strokeWeight(5);
       fill('rgb(212, 0, 178)');
-      ellipse(0,0,this.r*2);
+      ellipse(this.x,this.y,this.r*2);
       pop();
-    }
-    move(){
-      this.pos.add(this.vel);
-    }
-    // Bounding my orbs by the edges of the canvas
-        edges(){
-          if(this.pos.x > width || this.pos.x < 0 ){
-          this.vel *= 1;
-        }
 
-        if(this.pos.y > height || this.pos.y < 0 ){
-          this.vel *= 1;
+
       }
+
+      frame() {
+
+        this.show();
+        this.move();
+        this.edge();
+      }
+
+        // giving my objects motion
+          move() {
+              this.x += this.deltaX;
+              this.y += this.deltaY;
+           }
+
+        //keeping my objects within the canvas
+          edge() {
+              if( this.x + this.r >= width || this.x - this.r <= 0){
+                this.deltaX *= -1;
+              }
+              if( this.y + this.r >= height || this.y - this.r <= 0) {
+                this.deltaY *= -1;
+              }
+            }
+
     }
-}

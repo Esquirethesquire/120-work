@@ -2,16 +2,24 @@ let bg_color;
 let ship;
 let orbs = [];
 
+
 function setup() {
 
     // createCanvas(windowWidth, windowHeight);
     createCanvas(windowWidth, windowHeight);
     bg_color = color('rgb(0, 0, 0)');
+      ship = new Ship();
 
-    ship = new Ship();
+    let init_x = 200
+    let init_y = 200
     for( let i = 0; i < 5; i++) {
 
-    orbs.push(new Orb());
+    orbs.push(new Orb(init_x, init_y));
+    init_x +=400;
+    if(init_x > width){
+      init_x = 200
+      init_y +=200
+    }
     }
 
   }
@@ -27,9 +35,7 @@ function draw() {
     ship.edges();
 
     for(let i = 0; i < orbs.length; i++){
-      orbs[i].show();
-      orbs[i].move();
-      orbs[i].edges();
+      orbs[i].frame();
   }
 }
 
