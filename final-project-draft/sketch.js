@@ -3,11 +3,14 @@ let ships = [];
 let orbs = [];
 
 
+
 function setup() {
+
 
     // createCanvas(windowWidth, windowHeight);
     createCanvas(windowWidth, windowHeight);
     bg_color = color('rgb(0, 0, 0)');
+
     for( let i = 0; i < 1; i++) {
       ships.push(new Ship());
 }
@@ -46,6 +49,8 @@ function draw() {
         for(let j = 0; j < ships.length; j++){
           if(orbs[i].hits(ships[0])){
             ships.splice(j, 1);
+          
+
       }
 
     }
