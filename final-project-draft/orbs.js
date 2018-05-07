@@ -2,9 +2,9 @@
 // create orb class
 class Orb {
   constructor(x,y,s) {
-    this.x = x;
-    this.y = y;
-    this.r = 100
+    this.posX = x;
+    this.posY = y;
+    this.r = 50
     this.deltaX = random(-3, 3);
     this.deltaY = random(-3, 3);
     }
@@ -14,7 +14,7 @@ class Orb {
       stroke(255);
       strokeWeight(5);
       fill('rgb(212, 0, 178)');
-      ellipse(this.x,this.y,this.r*2);
+      ellipse(this.posX,this.posY,this.r*2);
       pop();
 
 
@@ -25,22 +25,30 @@ class Orb {
         this.show();
         this.move();
         this.edge();
+
       }
 
         // giving my objects motion
           move() {
-              this.x += this.deltaX;
-              this.y += this.deltaY;
+              this.posX += this.deltaX;
+              this.posY += this.deltaY;
            }
 
         //keeping my objects within the canvas
           edge() {
-              if( this.x + this.r >= width || this.x - this.r <= 0){
+              if( this.posX + this.r >= width || this.posX - this.r <= 0){
                 this.deltaX *= -1;
               }
-              if( this.y + this.r >= height || this.y - this.r <= 0) {
+              if( this.posY + this.r >= height || this.posY - this.r <= 0) {
                 this.deltaY *= -1;
               }
             }
-
-    }
+      //adding collision detection to the orbs
+          hits(ship){
+            let d = dist(this.posX, this.posY, ship.pos.x, ship.pos.y);
+            if( d < this.r){
+              console.log('HIT');
+              return true;
+            }
+          }
+}

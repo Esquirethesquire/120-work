@@ -1,5 +1,5 @@
 let bg_color;
-let ship;
+let ships = [];
 let orbs = [];
 
 
@@ -8,8 +8,9 @@ function setup() {
     // createCanvas(windowWidth, windowHeight);
     createCanvas(windowWidth, windowHeight);
     bg_color = color('rgb(0, 0, 0)');
-      ship = new Ship();
-
+    for( let i = 0; i < 1; i++) {
+      ships.push(new Ship());
+}
     let init_x = 200
     let init_y = 200
     for( let i = 0; i < 5; i++) {
@@ -29,35 +30,50 @@ function setup() {
 
 function draw() {
     background(bg_color);
-    ship.show();
-    ship.turn();
-    ship.update();
-    ship.edges();
+    for(let i = 0; i < ships.length; i++){
+    ships[0].show();
+    ships[0].turn();
+    ships[0].update();
+    ships[0].edges();
+
+  }
+
 
     for(let i = 0; i < orbs.length; i++){
       orbs[i].frame();
+
+//making the collision with orbs and ship make ship disappear
+        for(let j = 0; j < ships.length; j++){
+          if(orbs[i].hits(ships[0])){
+            ships.splice(j, 1);
+      }
+
+    }
   }
 }
 
 
 
+
+
     //function to make rotation and velocity stop when key is released
     function keyReleased() {
-      ship.setRotation(0);
-      ship.boosting(false);
+      ships[0].setRotation(0);
+      ships[0].boosting(false);
 
     }
 
 
     //function to rotate when key is pressed
     function keyPressed() {
-      if (keyCode == RIGHT_ARROW) {
-        ship.setRotation(.1);
+
+     if (keyCode == RIGHT_ARROW) {
+        ships[0].setRotation(.1);
       }
       else if (keyCode == LEFT_ARROW){
-        ship.setRotation(-.1);
+        ships[0].setRotation(-.1);
     }
       else if (keyCode == UP_ARROW){
-        ship.boosting(true);
+        ships[0].boosting(true);
   }
 }

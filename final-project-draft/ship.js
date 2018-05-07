@@ -16,13 +16,14 @@
     boosting(b){
       this.isBoosting = b;
     }
-//updates what the ship is doing
+//updates what the ship is doing, makes it continue moving in the direction
+// it is headed after the up arrow
     update(){
       if(this.isBoosting){
         this.boost();
       }
       this.pos.add(this.vel);
-      this.vel.mult(0.98);
+      this.vel.mult(0.97);
     }
 //adding a vector that point to direction and
 //adding to the velocity.
@@ -68,7 +69,8 @@
     turn(){
       this.direction += this.rotation;
     }
-}
+    }
+
 //********
 //END Ship
 //*********
