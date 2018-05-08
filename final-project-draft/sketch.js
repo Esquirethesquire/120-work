@@ -2,12 +2,8 @@ let bg_color;
 let ships = [];
 let orbs = [];
 
-
-
 function setup() {
-
-
-    // createCanvas(windowWidth, windowHeight);
+// createCanvas(windowWidth, windowHeight);
     createCanvas(windowWidth, windowHeight);
     bg_color = color('rgb(0, 0, 0)');
 
@@ -32,7 +28,13 @@ function setup() {
 
 
 function draw() {
+  //adding text for controls
     background(bg_color);
+    textSize(18);
+    fill(255);
+    text("Controls: Arrow keys to turn and move", 50,50);
+    text("DONT GET HIT!", 50,100);
+
     for(let i = 0; i < ships.length; i++){
     ships[0].show();
     ships[0].turn();
@@ -49,7 +51,7 @@ function draw() {
         for(let j = 0; j < ships.length; j++){
           if(orbs[i].hits(ships[0])){
             ships.splice(j, 1);
-          
+
 
       }
 
