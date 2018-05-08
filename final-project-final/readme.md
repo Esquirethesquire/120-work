@@ -2,6 +2,8 @@ Nathan Killian
 
 # Final Project
 
+[Art](https://alexk2313.github.io/120-work/final-project-final/);
+
 ## Intro
 My final project was influenced by the the retro arcade game "Asteroids". I played the game alot in my childhood and ive always had a game idea that has stemed from the original. In my game you control a ship/character. In the game you run from orbs that float around the screen but you are also confined to the edges of the screen. If you are caught by the orbs you lose the game and have to restart.
 
